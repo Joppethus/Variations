@@ -1,0 +1,50 @@
+/**
+ * The class Variation is a calculator of how many possibilities or combinations that
+ * exists with the users data.
+ * 
+ * @author Joel Stenhammar 
+ * @version 2014-03-26
+ */
+public class Variation
+{
+    
+    /**
+     * Constructor for objects of class Variation
+     */
+    public Variation()
+    {
+        // initialise instance variables
+    }
+    
+    /**
+     * Method for calcualting combinations with all the elements.
+     * This is directly the same as number of ways we can change the order of elements.
+     * @param the number of elements that can be arranged in 'returned' number of ways.
+     */
+    public long differentOrder(int numberOfElements)
+    {
+        return factorial(numberOfElements);
+    }
+    
+    /**
+     * Computes n!.
+     * Precondition: 0 <= n <= 20.
+     * (20! < 2^63 - 1, the maximum value of a long.)
+     */
+    public long factorial(int n)
+    {
+        if (n == 0) 
+        {
+            return 1;
+        }
+        else
+        {
+            int value = 1;
+            for(int i=1; i<=n; i++)
+            {
+                value = value*i;
+            }            
+            return value;
+        }
+    }
+}
