@@ -2,8 +2,6 @@
  * The class Variation is a calculator of how many possibilities or combinations that
  * exists with the users data.
  * 
- * @author Joppe
- * @version 2014-03-26
  */
 public class Variation
 {
