@@ -14,6 +14,8 @@ public class Variation
         // initialise instance variables
     }
     
+    
+    
     /**
      * Method for calcualting combinations with all the elements.
      * This is directly the same as number of ways we can change the order of elements.
