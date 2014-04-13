@@ -1,0 +1,93 @@
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * The test class Runner.
+ *
+ * @author  Joel Stenhammar
+ * @version 2014-03-26
+ */
+public class Runner
+{
+    /**
+     * Default constructor for test class Runner
+     */
+    public Runner()
+    {
+    }
+
+    /**
+     * Sets up the test fixture.
+     *
+     * Called before every test case method.
+     */
+    @Before
+    public void setUp()
+    {
+    }
+
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @After
+    public void tearDown()
+    {
+    }
+
+    @Test
+    public void TestUniqueCombinations()
+    {
+        Variation variatio1 = new Variation();
+        assertEquals(1, variatio1.uniqueCombinations(1, 1));
+        assertEquals(1, variatio1.uniqueCombinations(5, 5));
+        assertEquals(1, variatio1.uniqueCombinations(192, 192));
+        assertEquals(3, variatio1.uniqueCombinations(2, 3));
+        assertEquals(6, variatio1.uniqueCombinations(5, 6));
+        assertEquals(21, variatio1.uniqueCombinations(5, 7));
+        assertEquals(56, variatio1.uniqueCombinations(5, 8));
+        assertEquals(126, variatio1.uniqueCombinations(5, 9));
+        assertEquals(1, variatio1.uniqueCombinations2(1, 1));
+        assertEquals(1, variatio1.uniqueCombinations2(15, 15));
+        assertEquals(6, variatio1.uniqueCombinations2(5, 6));
+        assertEquals(4, variatio1.uniqueCombinations2(1, 4));
+        assertEquals(4, variatio1.uniqueCombinations2(3, 4));
+        assertEquals(6, variatio1.uniqueCombinations2(2, 4));
+        assertEquals(21, variatio1.uniqueCombinations2(5, 7));
+        assertEquals(56, variatio1.uniqueCombinations2(5, 8));
+        assertEquals(126, variatio1.uniqueCombinations2(5, 9));
+    }
+
+    @Test
+    public void TestDifferentOrder()
+    {
+        Variation variatio1 = new Variation();
+        assertEquals(1, variatio1.differentOrder(1));
+        assertEquals(2, variatio1.differentOrder(2));
+        assertEquals(6, variatio1.differentOrder(3));
+        assertEquals(24, variatio1.differentOrder(4));
+        assertEquals(120, variatio1.differentOrder(5));        
+        assertEquals(720, variatio1.differentOrder(6));
+        assertEquals(720, variatio1.factorial(6));
+        assertEquals(5040, variatio1.differentOrder(7));
+        assertEquals(5040, variatio1.factorial(7));
+        assertEquals(40320, variatio1.differentOrder(8));
+    }
+
+    //This should print out: "1 1 1 2 4" on separate rows. One for each number.
+    @Test
+    public void TestCombinations()
+    {
+        System.out.print('\u000C');
+        Variation variatio1 = new Variation();
+        assertEquals(1, variatio1.Combinations(1, 1));
+        assertEquals(2, variatio1.Combinations(1, 2));
+        assertEquals(6, variatio1.Combinations(2, 3));
+        assertEquals(12, variatio1.Combinations(2, 4));        
+        assertEquals(6720, variatio1.Combinations(5, 8));
+    }    
+    
+}
