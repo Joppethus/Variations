@@ -47,4 +47,26 @@ public class Variation
             return value;
         }
     }
+    
+    /**
+     * Computes the sum of the elements from v[first] to v[last].
+     * Precondition: 0 <= first <= last < v.length.
+     */
+    public long sum(int[] v, int first, int last)
+    {
+        if(first == last)
+        {
+            return v[first];
+        }
+        else
+        {
+            int value = 0;
+            for(int i = first; i <=last; i++)
+            {
+                value = v[i] + value;
+            }
+
+            return value;            
+        }
+    }
 }
