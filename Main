@@ -14,6 +14,36 @@ public class Variation
         // initialise instance variables
     }
     
+    /**
+     * This method calculates how many combinations there can be if each element is unique.
+     * Each element can therefore only appear once in each combination. This method DOES
+     * count same elements in different order as another combination. Prints out the quantity of
+     * numbers to check how big the result is.
+     * @param totalElements = number of elements to choose from.
+     * @param numberOfElements = number of elements that you want(/can pick).
+     */
+    public long Combinations(int numberOfElements, int totalElements)
+    {
+        long temp = uniqueCombinations(numberOfElements, totalElements);
+        long result = (temp*factorial(numberOfElements));
+        String s = String.valueOf(result);
+        System.out.println(s.length());
+        return result;
+    }
+    
+    /**
+     * This method calculates how many combinations there can be if each element is unique.
+     * Each element can therefore only appear once in each combination. This method does
+     * NOT count same elements in different order as another combination.
+     * @param totalElements = number of elements to choose from.
+     * @param numberOfElements = number of elements that you want(/can pick).
+     */
+    public long uniqueCombinations2(int numberOfElements, int totalElements)
+    {
+        return factorial(totalElements)/
+        ((factorial(totalElements-numberOfElements))*factorial(numberOfElements));
+    }
+    
     
     
     /**
