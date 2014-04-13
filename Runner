@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * The test class Runner.
  *
- * @author  Joel Stenhammar
+ * @author  Joppe
  * @version 2014-03-26
  */
 public class Runner
