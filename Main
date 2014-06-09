@@ -1,20 +1,50 @@
+
 /**
  * The class Variation is a calculator of how many possibilities or combinations that
  * exists with the users data.
- * @author Joppe
- * @version 2014-04-30
+ * 
+ * @author Joppe 
+ * @version 2014-06-09
  */
 public class Variation
 {
-    
+    // instance variables - replace the example below with your own
+    // private long result;
+
     /**
      * Constructor for objects of class Variation
      */
     public Variation()
     {
         // initialise instance variables
+
     }
-    
+
+    /**
+     * This method calculates how many combinations there can be if each element is unique.
+     * Each element can therefore only appear once in each combination. This method does
+     * NOT count same elements in different order as another combination.
+     * I figured out this formula, and it is as far as I know, not out on the web.
+     * @param totalElements = number of elements to choose from.
+     * @param numberOfElements = number of elements that you want(/can pick).
+     */
+    public long uniqueCombinations(int numberOfElements, int totalElements)
+    {
+        while( numberOfElements < totalElements)
+        {
+            return ((uniqueCombinations(numberOfElements, totalElements-1))*totalElements)
+            /(totalElements-numberOfElements);
+        }
+
+        if( numberOfElements > totalElements)
+        {
+            System.out.println("ERROR - numberOfElements > totalElements");
+            return 0;
+        }
+
+        return 1;        
+    }
+
     /**
      * This method calculates how many combinations there can be if each element is unique.
      * Each element can therefore only appear once in each combination. This method DOES
@@ -44,9 +74,7 @@ public class Variation
         return factorial(totalElements)/
         ((factorial(totalElements-numberOfElements))*factorial(numberOfElements));
     }
-    
-    
-    
+
     /**
      * Method for calcualting combinations with all the elements.
      * This is directly the same as number of ways we can change the order of elements.
@@ -56,7 +84,7 @@ public class Variation
     {
         return factorial(numberOfElements);
     }
-    
+
     /**
      * Computes n!.
      * Precondition: 0 <= n <= 20.
@@ -78,7 +106,7 @@ public class Variation
             return value;
         }
     }
-    
+
     /**
      * Computes the sum of the elements from v[first] to v[last].
      * Precondition: 0 <= first <= last < v.length.
@@ -100,4 +128,5 @@ public class Variation
             return value;            
         }
     }
+
 }
