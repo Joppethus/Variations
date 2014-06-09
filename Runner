@@ -82,6 +82,7 @@ public class Runner
     public void TestCombinations()
     {
         System.out.print('\u000C');
+        // Clears the terminal
         Variation variatio1 = new Variation();
         assertEquals(1, variatio1.Combinations(1, 1));
         assertEquals(2, variatio1.Combinations(1, 2));
