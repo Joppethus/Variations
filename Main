@@ -30,18 +30,17 @@ public class Variation
      */
     public long uniqueCombinations(int numberOfElements, int totalElements)
     {
-        while( numberOfElements < totalElements)
-        {
-            return ((uniqueCombinations(numberOfElements, totalElements-1))*totalElements)
-            /(totalElements-numberOfElements);
-        }
-
         if( numberOfElements > totalElements)
         {
             System.out.println("ERROR - numberOfElements > totalElements");
             return 0;
         }
-
+        
+        while( numberOfElements < totalElements)
+        {
+            return ((uniqueCombinations(numberOfElements, totalElements-1))*totalElements)
+            /(totalElements-numberOfElements);
+        }
         return 1;        
     }
 
